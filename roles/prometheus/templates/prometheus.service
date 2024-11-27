@@ -1,0 +1,11 @@
+[Unit]
+Description = Prometheus server
+
+[Service]
+User=bin
+Environment=DB_HOST="mysql-{{ env }}.pappik.online"
+ExecStart=/
+SyslogIdentifier=prometheus
+
+[Install]
+WantedBy=multi-user.target
