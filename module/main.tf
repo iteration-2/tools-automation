@@ -2,7 +2,7 @@ resource "aws_instance" "instance" {
   ami                    = data.aws_ami.expense_ami.id
   instance_type          = var.instance_type
   vpc_security_group_ids = [data.aws_security_group.allow-all.id]
-#  iam_instance_profile = aws_iam_role.
+  iam_instance_profile = aws_iam_instance_profile.instance_profile.name
 
   tags = {
     Name = var.tool_name
