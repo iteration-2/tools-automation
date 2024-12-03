@@ -9,11 +9,11 @@ resource "aws_instance" "instance" {
   }
 }
 
-resource "aws_route53_record" "record" {
+resource "aws_route53_record" "record-internal" {
   name    = var.tool_name
   type    = "A"
   zone_id = var.zone_id
-  records = [aws_instance.instance.public_ip]
+  records = [aws_instance.instance.private_ip]
   ttl = 30
 }
 
