@@ -1,5 +1,5 @@
 - name: Set machine name
-  ansible.builtin.shell: set-prompt Prmetheus
+  ansible.builtin.shell: set-prompt Prometheus
 
 - name: Download prometheus
   ansible.builtin.unarchive:
