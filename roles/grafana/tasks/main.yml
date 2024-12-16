@@ -10,3 +10,10 @@
   ansible.builtin.dnf:
     name: grafana
     state: installed
+
+- name: Start Grafana server
+  ansible.builtin.service:
+    name: grafana-server
+    state: started
+    enabled: yes
+    daemon-reload: yes
