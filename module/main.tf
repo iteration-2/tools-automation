@@ -22,7 +22,7 @@ resource "aws_route53_record" "record-internal" {
   name    = var.tool_name
   type    = "A"
   zone_id = var.zone_id
-  records = [aws_instance.instance.private_ip]
+  records = [aws_instance.instance.public_ip]
   ttl = 30
 }
 
